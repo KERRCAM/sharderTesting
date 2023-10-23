@@ -52,20 +52,21 @@ void main() {
    color = mix(white, color, step(0.12, abs(distanceToCircle)));
    color = mix(white, color, 1.5 * abs(distanceToCircle));
 
-  //saturn 
-  float radius2 = 0.5;
+  //saturn //just need to get rid of all 2s on colour 
+  //this demo just more obvious its working
+  float radius2 = 1.5;
   vec2 center2 = vec2(0.0, 0.0);
   center2 = vec2(sin(2.0 * u_time * 0.97)*0.35, cos(2.0 * u_time)*0.35);
   float distanceToCircle2 = sdfCircle2(uv - center2, radius2);
   color2 = distanceToCircle2 > 0.0 ? t4 : t5;
-  color2 = color2 / (1.0 - exp(-2.0 * abs(distanceToCircle2)));
+  color2 = color2 / (1.0 - exp(-2.0 * abs(distanceToCircle)));
   color2 = color2 * 0.8 + color2 * 0.2;
-  color2 = color2 * 0.8 + color2 * 0.2 * sin(50.0 * distanceToCircle2);
+  //color2 = color2 * 0.8 + color2 * 0.2 * sin(50.0 * distanceToCircle2);
   //color2 = color2 * 1.5 + t2 * 0.2 * sin(100.0 * distanceToCircle2 - 4.0 * u_time);
   //color2 = mix(white, color2, step(0.1, distanceToCircle2));
-  color2 = mix(white, color2, step(0.12, abs(distanceToCircle2)));
-  color2 = mix(white, color2, 1.5 * abs(distanceToCircle2));
+  color = mix(white, color, step(0.12, abs(distanceToCircle)));
+  color = mix(white, color, 1.5 * abs(distanceToCircle2));
 
   gl_FragColor = vec4(color, 1.0); 
-  gl_FragColor = vec4(color2, 1.0); 
+  //gl_FragColor = vec4(color2, 1.0); 
 }
