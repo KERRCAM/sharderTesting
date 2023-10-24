@@ -22,7 +22,7 @@ void main() {
   uv = uv - 0.5;
   uv = uv * u_resolution / 100.0;
  
-  vec3 t1 = vec3(0.2941, 0.251, 0.0157); 
+  vec3 t1 = vec3(0.3725, 0.298, 0.0235); 
   vec3 t2 = vec3(0.8824, 0.4745, 0.0431);  
   vec3 t3 = vec3(0.0235, 0.6353, 0.898);  
   vec3 t4 = vec3(0.8275, 0.7608, 0.0118); 
@@ -54,7 +54,7 @@ void main() {
 
   //just need to get rid of all 2s on colour 
   //this demo just more obvious its working
-  float radius2 = 1.5;
+  float radius2 = 2.5;
   vec2 center2 = vec2(0.0, 0.0);
   center2 = vec2(sin(1.6 * u_time * 0.97)*0.35, cos(1.6 * u_time)*0.35);
   float distanceToCircle2 = sdfCircle2(uv - center2, radius2);
