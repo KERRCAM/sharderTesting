@@ -38,7 +38,7 @@ void main() {
   vec3 color2 = black; 
   color2 = vec3(uv.x, uv.y, 0.0);
 
-  //sun
+  //centre object
   float radius = 0.5;
   vec2 center = vec2(0.0, 0.0);
   center = vec2(sin(0.8 * u_time * 0.97)*0.35, cos(0.8 * u_time)*0.35);
@@ -48,15 +48,15 @@ void main() {
   color = color * 0.8 + color * 0.2;
   color = color * 0.8 + color * 0.2 * sin(50.0 * distanceToCircle);
   color = color * 1.5 + t2 * 0.2 * sin(100.0 * distanceToCircle - 4.0 * u_time);
-   color = mix(white, color, step(0.1, distanceToCircle));
-   color = mix(white, color, step(0.12, abs(distanceToCircle)));
-   color = mix(white, color, 1.5 * abs(distanceToCircle));
+  color = mix(white, color, step(0.1, distanceToCircle));
+  color = mix(white, color, step(0.12, abs(distanceToCircle)));
+  color = mix(white, color, 1.5 * abs(distanceToCircle));
 
-  //saturn //just need to get rid of all 2s on colour 
+  //just need to get rid of all 2s on colour 
   //this demo just more obvious its working
   float radius2 = 1.5;
   vec2 center2 = vec2(0.0, 0.0);
-  center2 = vec2(sin(2.0 * u_time * 0.97)*0.35, cos(2.0 * u_time)*0.35);
+  center2 = vec2(sin(1.6 * u_time * 0.97)*0.35, cos(1.6 * u_time)*0.35);
   float distanceToCircle2 = sdfCircle2(uv - center2, radius2);
   color2 = distanceToCircle2 > 0.0 ? t4 : t5;
   color2 = color2 / (1.0 - exp(-2.0 * abs(distanceToCircle)));
