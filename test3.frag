@@ -23,16 +23,16 @@ void main() {
   uv = uv * u_resolution / 100.0;
  
   vec3 t1 = vec3(0.3725, 0.298, 0.0235); 
-  vec3 t2 = vec3(0.8824, 0.4745, 0.0431);  
+  vec3 t2 = vec3(0.8, 0.8824, 0.0431);  
   vec3 t3 = vec3(0.0235, 0.6353, 0.898);  
-  vec3 t4 = vec3(0.8275, 0.7608, 0.0118); 
+  vec3 t4 = vec3(0.7922, 0.7804, 0.5765); 
   vec3 t5 = vec3(0.0, 0.0, 0.0); 
   vec3 black = vec3(0.0);
-  vec3 white = vec3(1.0);
+  vec3 white = vec3(0.9137, 0.9176, 0.8588);
   vec3 red = vec3(1.0, 0.0, 0.0);
   vec3 blue = vec3(0.65, 0.85, 1.0); 
   vec3 darkBlue = vec3(0, 0, 1);
-  vec3 orange = vec3(0.9, 0.6, 0.3);
+  vec3 orange = vec3(0.7765, 0.451, 0.1255);
   vec3 color = black; 
   color = vec3(uv.x, uv.y, 0.0); 
   vec3 color2 = black; 
