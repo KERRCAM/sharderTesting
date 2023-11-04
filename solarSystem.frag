@@ -30,7 +30,7 @@ void main() {
   vec3 t3 = vec3(0.0235, 0.6353, 0.898);  
   vec3 t4 = vec3(0.7373, 0.6784, 0.0392); 
   vec3 t5 = vec3(0.0, 0.0, 0.0);  
-  vec3 t6 = vec3(0.2667, 0.1882, 0.1882); 
+  vec3 t6 = vec3(0.7922, 0.0471, 0.0471); 
   vec3 black = vec3(0.0);
   vec3 white = vec3(1.0);
   vec3 red = vec3(1.0, 0.0, 0.0);
@@ -54,8 +54,8 @@ void main() {
   color = color * 0.8 + color * 0.2;
   color = color * 0.8 + color * 0.2 * sin(50.0 * distanceToCircle);
   color = color * 1.5 + t2 * 0.2 * sin(100.0 * distanceToCircle - 4.0 * u_time);
-  color = mix(white, color, step(0.1, distanceToCircle));
-  color = mix(white, color, step(0.12, abs(distanceToCircle)));
+  //color = mix(white, color, step(0.1, distanceToCircle));
+  //color = mix(white, color, step(0.12, abs(distanceToCircle)));
   color = mix(white, color, 1.5 * abs(distanceToCircle));
 
   //mercury
@@ -63,10 +63,10 @@ void main() {
   vec2 center2 = vec2(0.0, 0.0);
   center2 = vec2(sin(1.6 * u_time)*3.0, cos(1.6 * u_time)*3.0);
   float distanceToCircle2 = sdfCircle2(uv - center2, radius2);
-  color3 = distanceToCircle2 > 0.0 ? t4 : t5;
+  color2 = distanceToCircle2 > 0.0 ? t4 : t5;
   color = color / (1.0 - exp(-2.0 * abs(distanceToCircle2)));
   color = color * 0.8 + color * 0.2;
-  color = mix(t6, color, step(0.12, abs(distanceToCircle2)));
+  //color = mix(t6, color, step(0.12, abs(distanceToCircle2)));
   color = mix(t6, color, 1.5 * abs(distanceToCircle2)); 
 
   //venus 
