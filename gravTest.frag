@@ -47,7 +47,11 @@ void main() {
     //F = ma
     float a1 = force / mass1;
     float a2 = force / mass2;
-    float angle = tan(ydiff / xdiff);
+    float angle = tan(ydiff / xdiff); 
+    x1 = x1 + (a1 * cos(angle)); 
+    y1 = y1 + (a1 * sin(angle));
+    //calc vel 
+    //apply to 
     //then a can be be applied to the positions of ob1 and ob2
    
 
